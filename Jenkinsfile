@@ -29,9 +29,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    if [! -f build/index.html]; then
-                        exit 1
-                    fi
+                    test -f build/index.html
                     npm test
                 '''
             } 
